@@ -6,4 +6,8 @@ describe('ng-element-accessible', function () {
         scope = _$rootScope_;
         compile = _$compile_;
     }));
+
+    it('demo', function () {
+
+    });
 });
