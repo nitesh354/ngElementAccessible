@@ -7,12 +7,162 @@
     <script type="text/javascript">
         var myApp = angular.module('myApp', ['ngElementAccessible']);
 
-        myApp.controller('demoCtrl', function ($scope, $log) {
-        });
+        myApp.controller('demoCtrl', function ($scope, $log) {});
     </script>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+
+        .list>li {
+            width: 100px;
+        }
+
+        .horizontal-list>li {
+            display: inline-block;
+            width: 120px;
+        }
+
+        .big-list>li {
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body ng-controller="demoCtrl">
+    <div>
+        <p>Click on any list item and press up/down arrow to access other list items.</p>
+        <ul class="list" ng-element-accessible>
+            <li ng-element-access tabindex="0">Item 1</li>
+            <li ng-element-access tabindex="0">Item 2</li>
+            <li ng-element-access tabindex="0">Item 3</li>
+            <li ng-element-access tabindex="0">Item 4</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Click on any list item and press left/right arrow to access other list items.</p>
+        <ul class="horizontal-list" ng-element-accessible>
+            <li ng-element-access tabindex="0">Item 1</li>
+            <li ng-element-access tabindex="0">Item 2</li>
+            <li ng-element-access tabindex="0">Item 3</li>
+            <li ng-element-access tabindex="0">Item 4</li>
+            <li ng-element-access tabindex="0">Item 5</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Click on any list item and press up/down arrow to access other list items.</p>
+        <ul class="big-list" ng-element-accessible>
+            <li ng-element-access tabindex="0">
+                <label>Item 1:
+                    <input type="text" />
+                </label>
+            </li>
+            <li ng-element-access tabindex="0">
+                <label>Item 2:
+                    <input type="text" />
+                </label>
+            </li>
+            <li ng-element-access tabindex="0">
+                <label>Item 3:
+                    <input type="text" />
+                </label>
+            </li>
+            <li ng-element-access tabindex="0">
+                <label>Item 4:
+                    <input type="text" />
+                </label>
+            </li>
+            <li ng-element-access tabindex="0">
+                <label>Item 5:
+                    <input type="text" />
+                </label>
+            </li>
+            <li ng-element-access tabindex="0">
+                <label>Item 6:
+                    <input type="text" />
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Click on any list item and press up/down arrow to traverse through top/bottom &amp; left/right arrow to traverse through left/right.</p>
+        <ul class="horizontal-list" ng-element-accessible prev="37" next="39">
+            <li ng-element-access tabindex="0" ng-element-accessible prev="38" next="40">
+                <ul class="list">
+                    <li ng-element-access tabindex="0">
+                        <label>Item 1:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 2:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 3:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 4:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 5:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 6:
+                            <input type="checkbox" />
+                        </label>
+                    </li>
+                </ul>
+            </li>
+            <li ng-element-access tabindex="0" ng-element-accessible prev="38" next="40">
+                <ul class="list">
+                    <li ng-element-access tabindex="0">
+                        <label>Item 1:
+                            <input type="radio" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 2:
+                            <input type="radio" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 3:
+                            <input type="radio" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 4:
+                            <input type="radio" />
+                        </label>
+                    </li>
+                    <li ng-element-access tabindex="0">
+                        <label>Item 5:
+                            <input type="radio" />
+                        </label>
+                    </li>
+                </ul>
+            </li>
+            <li ng-element-access tabindex="0" ng-element-accessible prev="38" next="40">
+                <ul class="list">
+                    <li ng-element-access tabindex="0">Item 1</li>
+                    <li ng-element-access tabindex="0">Item 2</li>
+                    <li ng-element-access tabindex="0">Item 3</li>
+                    <li ng-element-access tabindex="0">Item 4</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>
