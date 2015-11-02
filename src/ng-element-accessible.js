@@ -6,7 +6,7 @@
         next: '39,40'
     });
 
-    myModule.directive('ngElementAccessible', ['defaultConfig', function (defaultConfig) {
+    myModule.directive('ngKey', ['defaultConfig', function (defaultConfig) {
         return {
             restrict: 'EA',
             controller: ['$scope', function ($scope) {
@@ -68,11 +68,11 @@
         };
     }]);
 
-    myModule.directive('ngElementAccess', [function () {
+    myModule.directive('ngKeyItem', [function () {
         return {
             restrict: 'EA',
             link: function (scope, elem, attr, ctrl) {
-                var parentCtrl = (elem.parent() && elem.parent().controller('ngElementAccessible')) || undefined;
+                var parentCtrl = (elem.parent() && elem.parent().controller('ngKey')) || undefined;
                 if (angular.isDefined(parentCtrl)) {
                     var count = parentCtrl.registerElement(elem);
                     elem.bind('keydown', function (ev) {
